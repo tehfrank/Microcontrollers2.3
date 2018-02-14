@@ -9,6 +9,7 @@
 #include <util/delay.h>
 
 int stateNum = 0;
+int waittimes[] = {500,100};
 
 void checkState();
 void wait(int);
@@ -31,7 +32,11 @@ int main(void)
 	
 	return 1;
 }
-
+/*	
+	Description: Checks wich state the stamemachine is in and turns on the corresponding light
+	Author: Gijs van Fessem & Frank Veraart
+	Created: week 1
+*/
 void opdracht7 (){
 		if(stateNum == 0){
 		PORTD = 0x01;
@@ -44,9 +49,15 @@ void opdracht7 (){
 		}else if(stateNum == 4){
 		PORTD = 0x10;
 		}	
+	wait(500);
 	checkState();
 }
 
+/*	
+	Description: Checks which button is pressed to see which state the statemachine should be in
+	Author: Gijs van Fessem & Frank Veraart
+	Created: week 1
+*/
 void checkState(){
 	if((PINC == 0b01000000 && stateNum == 0 )||(PINC == 0b01000000 && stateNum == 2)){
 		stateNum = 1;
@@ -67,4 +78,94 @@ void wait( int ms )
 	{
 		_delay_ms( 1 );
 	}
+}
+
+
+/*	
+	Description: Lets the light blink every 500ms
+	Author: Gijs van Fessem & Frank Veraart
+	Created: week 1
+*/
+void opdracht2(){
+		PORTD = 0x80;
+		wait(500);
+		PORTD = 0x00;
+		wait(500);
+}
+
+/*	
+	Description: When you hold the button the light blinks every 500ms
+	Author: Gijs van Fessem & Frank Veraart
+	Created: week 1
+*/
+void opdracht3(int *state){
+		if(PINC == 0b00000001 || *state == 1) {
+			PORTD = 0x80;
+			wait(500);
+			PORTD = 0x00;
+			wait(500);
+			}
+}
+
+/*	
+	Description: Light pattern using bit shifting
+	Author: Gijs van Fessem & Frank Veraart
+	Created: week 1
+*/
+void opdracht4(int *state){
+	int x = 0x80;
+	PORTD = x;
+	wait(100);
+		while(x != 0x01){
+		x=x>>1;	
+		PORTD = x;
+		wait(100);
+		}
+		while(x != 0x80){
+		x=x<<1;	
+		PORTD = x;	
+		wait(100);
+		}
+}
+	
+/*	
+	Description: Cool light pattern using an array
+	Author: Gijs van Fessem & Frank Veraart
+	Created: week 1
+*/	
+void opdracht5(int *state){
+	int ledpins[] = {0x80,0xC0,0xE0,0xF0,0x78,0x3C,0x1E,0x0F,0x07,0x03,0x01,0x00,
+		0x80,0xC0,0x60,0x30,0x18,0x0C,0x06,0x03,0x01,0x00,
+		0x01,0x03,0x06,0x0C,0x18,0x30,0x60,0xC0,0x80,0x00,
+		0x81,0xC3,0x66,0x3C,0x66,0xC3,0x81,0x00,
+		0xFF,0x00,0xFF,0x00};
+		int index = 0;
+		while(index<sizeof(ledpins)){
+			PORTD = ledpins[index];
+			wait(300);
+			index++;
+		}
+}
+
+/*	
+	Description: The light blinks every 500ms, but when you press the button it blinks every 100ms
+	Author: Gijs van Fessem & Frank Veraart
+	Created: week 1
+*/
+void opdracht6(int acc){	
+		PORTD = 0x80;
+		wait(	waittimes[acc]);
+		PORTD = 0x00;
+		wait(waittimes[acc]);
+}
+
+/*	
+	Description: Changes the state when you press the button
+	Author: Gijs van Fessem & Frank Veraart
+	Created: week 1
+*/
+int checkstate(int *state){
+	if(PINC == 0b00000001){
+		return !state;
+	}else{return state;}
 }
