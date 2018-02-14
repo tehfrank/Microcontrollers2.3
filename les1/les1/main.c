@@ -9,6 +9,7 @@
 #include <util/delay.h>
 
 int stateNum = 0;
+int waittimes[] = {500,100};
 
 void checkState();
 void wait(int);
@@ -153,7 +154,7 @@ void opdracht5(int *state){
 */
 void opdracht6(int acc){	
 		PORTD = 0x80;
-		wait(waittimes[acc]);
+		wait(	waittimes[acc]);
 		PORTD = 0x00;
 		wait(waittimes[acc]);
 }
