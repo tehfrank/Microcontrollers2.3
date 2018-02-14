@@ -409,10 +409,10 @@ END GROUP
  .debug_abbrev  0x00000000      0x718 D:/Atmel/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega128a/avr51/crtatmega128a.o
  .debug_abbrev  0x00000718      0x140 main.o
 
-.debug_line     0x00000000      0x3d0
+.debug_line     0x00000000      0x3d1
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x169 D:/Atmel/7.0/Packs/atmel/ATmega_DFP/1.2.150/gcc/dev/atmega128a/avr51/crtatmega128a.o
- .debug_line    0x00000169      0x267 main.o
+ .debug_line    0x00000169      0x268 main.o
 
 .debug_frame    0x00000000       0x54
  *(.debug_frame)

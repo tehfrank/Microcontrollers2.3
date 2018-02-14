@@ -19,7 +19,7 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
   7 .debug_abbrev 00000858  00000000  00000000  00000c4b  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   000003d0  00000000  00000000  000014a3  2**0
+  8 .debug_line   000003d1  00000000  00000000  000014a3  2**0
                   CONTENTS, READONLY, DEBUGGING
   9 .debug_frame  00000054  00000000  00000000  00001874  2**2
                   CONTENTS, READONLY, DEBUGGING
@@ -310,8 +310,8 @@ void opdracht7 (){
  1fc:	08 95       	ret
 
 000001fe <main>:
-void checkState();
-void wait(int);
+void opdracht7();
+void opdracht6();
  
 int main(void)
 {

@@ -10,9 +10,14 @@
 
 int stateNum = 0;
 
-void opdracht7();
 void checkState();
 void wait(int);
+void opdracht2();
+void opdracht3();
+void opdracht4();
+void opdracht5();
+void opdracht7();
+void opdracht6();
  
 int main(void)
 {
