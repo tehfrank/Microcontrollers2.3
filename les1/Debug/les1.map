@@ -267,9 +267,9 @@ END GROUP
  .text.checkState
                 0x000000ae      0x10e main.o
                 0x000000ae                checkState
- .text.opdracht6
+ .text.opdracht7
                 0x000001bc       0x42 main.o
-                0x000001bc                opdracht6
+                0x000001bc                opdracht7
  .text.main     0x000001fe        0xa main.o
                 0x000001fe                main
                 0x00000208                . = ALIGN (0x2)

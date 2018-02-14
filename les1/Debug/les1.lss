@@ -259,48 +259,48 @@ void checkState(){
  1b8:	83 b3       	in	r24, 0x13	; 19
  1ba:	08 95       	ret
 
-000001bc <opdracht6>:
+000001bc <opdracht7>:
 	
 	return 1;
 }
 
-void opdracht6 (){
+void opdracht7 (){
 		if(stateNum == 0){
  1bc:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <_edata>
  1c0:	90 91 01 01 	lds	r25, 0x0101	; 0x800101 <_edata+0x1>
  1c4:	00 97       	sbiw	r24, 0x00	; 0
- 1c6:	19 f4       	brne	.+6      	; 0x1ce <opdracht6+0x12>
+ 1c6:	19 f4       	brne	.+6      	; 0x1ce <opdracht7+0x12>
 		PORTD = 0x01;
  1c8:	81 e0       	ldi	r24, 0x01	; 1
  1ca:	82 bb       	out	0x12, r24	; 18
- 1cc:	16 c0       	rjmp	.+44     	; 0x1fa <opdracht6+0x3e>
+ 1cc:	16 c0       	rjmp	.+44     	; 0x1fa <opdracht7+0x3e>
 		}else if(stateNum == 1){
  1ce:	81 30       	cpi	r24, 0x01	; 1
  1d0:	91 05       	cpc	r25, r1
- 1d2:	19 f4       	brne	.+6      	; 0x1da <opdracht6+0x1e>
+ 1d2:	19 f4       	brne	.+6      	; 0x1da <opdracht7+0x1e>
 		PORTD = 0x02;
  1d4:	82 e0       	ldi	r24, 0x02	; 2
  1d6:	82 bb       	out	0x12, r24	; 18
- 1d8:	10 c0       	rjmp	.+32     	; 0x1fa <opdracht6+0x3e>
+ 1d8:	10 c0       	rjmp	.+32     	; 0x1fa <opdracht7+0x3e>
 		}else if(stateNum == 2){
  1da:	82 30       	cpi	r24, 0x02	; 2
  1dc:	91 05       	cpc	r25, r1
- 1de:	19 f4       	brne	.+6      	; 0x1e6 <opdracht6+0x2a>
+ 1de:	19 f4       	brne	.+6      	; 0x1e6 <opdracht7+0x2a>
 		PORTD = 0x04;
  1e0:	84 e0       	ldi	r24, 0x04	; 4
  1e2:	82 bb       	out	0x12, r24	; 18
- 1e4:	0a c0       	rjmp	.+20     	; 0x1fa <opdracht6+0x3e>
+ 1e4:	0a c0       	rjmp	.+20     	; 0x1fa <opdracht7+0x3e>
 		}else if(stateNum == 3){
  1e6:	83 30       	cpi	r24, 0x03	; 3
  1e8:	91 05       	cpc	r25, r1
- 1ea:	19 f4       	brne	.+6      	; 0x1f2 <opdracht6+0x36>
+ 1ea:	19 f4       	brne	.+6      	; 0x1f2 <opdracht7+0x36>
 		PORTD = 0x08;
  1ec:	88 e0       	ldi	r24, 0x08	; 8
  1ee:	82 bb       	out	0x12, r24	; 18
- 1f0:	04 c0       	rjmp	.+8      	; 0x1fa <opdracht6+0x3e>
+ 1f0:	04 c0       	rjmp	.+8      	; 0x1fa <opdracht7+0x3e>
 		}else if(stateNum == 4){
  1f2:	04 97       	sbiw	r24, 0x04	; 4
- 1f4:	11 f4       	brne	.+4      	; 0x1fa <opdracht6+0x3e>
+ 1f4:	11 f4       	brne	.+4      	; 0x1fa <opdracht7+0x3e>
 		PORTD = 0x10;
  1f6:	80 e1       	ldi	r24, 0x10	; 16
  1f8:	82 bb       	out	0x12, r24	; 18
@@ -323,8 +323,8 @@ int main(void)
 	
     while (1) 
     {
-		opdracht6();
- 204:	db df       	rcall	.-74     	; 0x1bc <opdracht6>
+		opdracht7();
+ 204:	db df       	rcall	.-74     	; 0x1bc <opdracht7>
  206:	fe cf       	rjmp	.-4      	; 0x204 <main+0x6>
 
 00000208 <_exit>:

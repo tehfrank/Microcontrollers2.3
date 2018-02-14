@@ -10,7 +10,7 @@
 
 int stateNum = 0;
 
-void opdracht6();
+void opdracht7();
 void checkState();
 void wait(int);
  
@@ -21,13 +21,13 @@ int main(void)
 	
     while (1) 
     {
-		opdracht6();
+		opdracht7();
     }
 	
 	return 1;
 }
 
-void opdracht6 (){
+void opdracht7 (){
 		if(stateNum == 0){
 		PORTD = 0x01;
 		}else if(stateNum == 1){
